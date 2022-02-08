@@ -11,27 +11,39 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <title>CoopEre</title>
   </head>
+  <style>
+      .nav{
+          background-color:#ffff;
+      }
+      
+  </style>
     <header>
-        <nav style="background-color:ffff; height:55px;" class="navbar navbar-expand-md  navbar-light fixed-top">
-          <div class="container-fluid ">
-            <div class="row w-100  ">
-                  <div class="col-2 ">
-                    logo 
-                  </div>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+        <a class="navbar-brand text-dark" href="#">CoopEre</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                
+            </li>
+            <li class="nav-item">
+                
+            </li>
+            <li class="nav-item">
+                
+            </li>
+            </ul>
+            <form class="form-inline mt-2 mt-md-0">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
+            <input class="form-control mr-sm-2 rounded-0" type="text" placeholder="Recherche" aria-label="Search">
+            </form>
 
-                  <div class="col-2 col-sm-4  mx-auto">
-                       <input id="searchQueryInput" type="text" name="searchQueryInput" placeholder="Search" value="" />
-                       <button><i class="bi bi-search"></i></button>
-                  </div>
-                 <div class="col-3   " >
-                     <button class="btn btn-info"><i class="bi bi-bell"></i></button>
-                  </div>  
-                  <div class="col-3   " >
-                     <button><i class="bi bi-circle-fill"></i></button>
-                  </div>
-              </div>
-          </div>
-        </nav>
+            <button class="btn btn-info"><i class="bi bi-bell"></i></button>
+            <button class="btn mx-1"><i class="bi bi-person-circle"></i></button>
+        </div>
+    </nav>
       </header>
 <body >
   <section style="padding: 50px; ">
