@@ -57,7 +57,7 @@
 <body style="background-color: #F7F7F7" >
 <header>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top">
-            <a class="navbar-brand text-dark" href="#">CoopEre</a>
+            <img src="<?= base_url('images/logocoopere.svg')?>" alt="" style="width:3%">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
