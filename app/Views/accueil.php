@@ -1,85 +1,74 @@
 <?php ob_start(); ?>
 <div class="container-fluid">
     <div class="row">
+         <!-- Permet d'acceder au formulaire qui crée les évenements-->
         <div class="col-5 text-center my-1" >
-         <a href="<?= base_url() . '\agenda\add' ?>"> <button class="btn btn-primary"id="btndate"> Nouvelle Date</button></a>
+            <a href="<?= base_url() . '\agenda\add' ?>"> <button class="btn btn-primary"id="btndate"> Nouvelle Date</button></a>
         </div>
     </div>
 </div>
 
-<script>
-            function openCity(evt, cityName) {
-                var i, tabcontent, tablinks;
-                tabcontent = document.getElementsByClassName("tabcontent");
-                for (i = 0; i < tabcontent.length; i++) {
-                    tabcontent[i].style.display = "none";
-                }
-                tablinks = document.getElementsByClassName("tablinks");
-                for (i = 0; i < tablinks.length; i++) {
-                    tablinks[i].className = tablinks[i].className.replace(
-                        " active",
-                        ""
-                    );
-                }
-                document.getElementById(cityName).style.display = "block";
-                evt.currentTarget.className += " active";
-            }
 
-            // Get the element with id="defaultOpen" and click on it
-          $('.tablinks:first-child').click();
-        </script>
-   
-  </div>
-</div>
-
+ 
 <div class="container" id="bgsound">
     <div class="row ">
+        
         <!-- Partie  de gauche de la partie accueil de l'agenda-->
-            <div class="col-6 mt-1 p-4 " >
+            <div class="col-5 mt-1 p-4 " >
+                 <!-- Affiche depuis le controlleur les données selon une requete passée par AgendaModel-->
                 <?php foreach ($agenda as $sp) {
                         $intituleAgenda    = $sp->intituleAgenda;
                         $heureAgenda       = $sp->heureAgenda;
                         $dateAgenda       = $sp->dateAgenda;
                         $lieuAgenda       = $sp->lieuAgenda;
-                        $jaugeAgenda      =$sp->jaugeAgenda;
-                        $contenuAgenda    =$sp->contenuAgenda;
-                        $organisateurAgenda    =$sp->organisateurAgenda;
-                        $contactAgenda    =$sp->contactAgenda;
-                        $infoAgenda    =$sp->infoAgenda;
-                        $contenuAgenda    =$sp->contenuAgenda;
                         $idAgenda         = $sp->idAgenda;
                       ?>
-                
                     <div class="tab">
-                        <button class="tablinks " onclick="openCity(event, '<?= $idAgenda?>')"  >
                         <div class="container">
                             <div class="row">
-                                <div class="col-4 ">
+                                    
+                                <div class="col-6 ">
                                         <div class="col-12">
-                                        <?= $dateAgenda?>
+                                       <p>
+                                           <!-- Affichage de la date pour chaque evenement crée au préalable-->
+                                    <?php
+                                    setlocale(LC_TIME, ['fr', 'fra', 'fr_FR.UTF-8']);
+                                    $d3 = $dateAgenda;
+                                    $tmstp3 = strtotime($d3);
+                                    $dfr3 = strftime(' %d %B %Y', $tmstp3);
+                                    echo $dfr3
+
+                                    ?>
+
+                                </p>
                                         </div>
                                         <div class="col-12">
-                                             <?= $heureAgenda?>
+                                             <!-- Affichage de l'heure pour chaque evenement crée au préalable-->
+                                             <?= date_create($heureAgenda)->format('H:i');?>
                                         </div>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-4">
                                      <?= $intituleAgenda?>
                                 </div>
                                 <div class="col-1 my-auto">
-                                    <i class="bi bi-arrow-right" id="arrow"></i>
+                                     <!-- Bouton permettant d'afficher chaque evenement crée au préalable-->
+                                   <button class="tablinks " onclick="openCity(event, '<?= $idAgenda?>')"  > 
+                                        <i  class="arrow"> > </i>
+                                    </button>
                                 </div>
+
                             </div>
                         </div>
-                       
-                        </button>
+                        
                     </div>
-                     <?php } ?>
-            </div>  
+                            <?php } ?> 
+            </div> 
+      
            <div class="col-1">
                 <hr>  
            </div>
              <!-- Partie  de droite de la partie accueil de l'agenda-->   
-            <div class="col-5 p-4 " >
+            <div class="col-6 p-4 " >
                 <?php foreach ($agenda as $sp) {
                         $intituleAgenda    = $sp->intituleAgenda;
                         $heureAgenda       = $sp->heureAgenda;
@@ -110,8 +99,13 @@
                                             <div class="col-4">
                                                 <i class="bi bi-calendar-week" style="color: #1F97C7; font-size:20px"></i>
                                             </div>
-                                            <div class="col-8">
-                                                <p><?= $dateAgenda ?> </p>
+                                            <div class="col-8 mt-1">
+                                                <p> <?php setlocale(LC_TIME, ['fr', 'fra', 'fr_FR.UTF-8']);
+                                                    $d1 = $dateAgenda;
+                                                    $tmstp1 = strtotime($d1);
+                                                    $dfr1 = strftime(' %d %B %Y', $tmstp1);
+                                                    echo 'Le ' .$dfr1  
+                                            ?></p>
                                             </div>
                                         </div> 
                                     </div>
@@ -121,7 +115,7 @@
                                                 <i class="bi bi-clock" style="color: #1F97C7; font-size:20px"></i>
                                             </div>
                                             <div class="col-8">
-                                                <p><?= $heureAgenda?></p>
+                                                <p> <?= date_create($heureAgenda)->format('H:i');?></p>
                                             </div>
                                         </div> 
                                     </div>
@@ -163,14 +157,14 @@
                                 <div class="col-12">
                                     <h4>Organisateur</h4>
                                 </div>
-                                <div class="col-1">
-                                    <i class="bi bi-person-circle" style="color: gray;background:#C4C4C4; font-size:20px"></i>
+                                <div class="col-1 ">
+                                    <i class="bi bi-person-circle " style="color: gray; font-size:20px;"></i>
                                 </div>
                                 <div class="col-4">
                                     <p><?= $organisateurAgenda?></p>
                                 </div>
                                 <div class="col-1">
-                                    <i class="bi bi-envelope" style="color: #1F97C7; font-size:20px"></i>
+                                    <i class="bi bi-envelope my-auto" style="color: #1F97C7; font-size:20px"></i>
                                 </div>
                                 <div class="col-4">
                                     <p><?= $contactAgenda?></p>
@@ -193,7 +187,6 @@
                     </div>
                 </div>
                 </div>
-                <br>
                 <?php } ?>
             </div>  
     </div>
@@ -246,13 +239,12 @@
     
      .tab {
         width: 114%;
-         border: 1px solid #ccc;
+        border: 1px solid #ccc;
         background-color: #f1f1f1;
     }
    
     .tab button {
         display: block;
-        background-color: #FFFFFF;
         color: black;
         padding: 22px 16px;
         width: 100%;
@@ -261,12 +253,12 @@
         text-align: left;
         cursor: pointer;
         transition: 0.3s;
-        font-size: 17px;
+        font-size: 20px;
     }
-    .tab button.active {
-        background-color: lightblue;
+    .tab button.active .arrow {
+        color: #1F97C7;
     }
-    #arrow{
+    .arrow{
         color:#2C2C2C;
     }
     hr{ 
@@ -287,5 +279,24 @@
    
 
 </style>
+<script >
+            function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+      }
+
+            // Get the element with id="defaultOpen" and click on it
+            document.getElementsByClassName('arrow')[0].click();
+ </script>
+   
 <?php $content = ob_get_clean(); ?>
 <?php include_once('template.php'); ?>
