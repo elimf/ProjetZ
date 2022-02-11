@@ -10,7 +10,7 @@ class UsersModel extends Model
     protected $primarykey= 'idUser';
 
     protected $allowedFields = ['pseudoUsers','mailUsers'];
-
+    // Requete qui renvoie les informations  selon un utilisateur choisi dans la base de donnée.
     public function infoUser()
     {
         $db = \Config\Database::connect();

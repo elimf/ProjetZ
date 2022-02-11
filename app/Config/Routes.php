@@ -36,6 +36,8 @@ $routes->setAutoRoute(true);
 $routes->group('agenda', function ($routes) {
     $routes->add('add', 'Agenda::select');
     $routes->add('all', 'Agenda::index');
+    $routes->add('save', 'Agenda::save');
+    $routes->add('confirm', 'Agenda::confirmation');
     });
 /*
  * --------------------------------------------------------------------

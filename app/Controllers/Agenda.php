@@ -42,7 +42,13 @@ class Agenda extends Controller
             'idUser' => $this->request->getPost('idUser'),
         ];
         $agenda->save($data);
-        $data =['status'=>'Formulaire rentrer'];
-        return $this->response->setJSON($data);
+       
+      return;
+    } 
+   
+   public function confirmation ()
+    {
+        
+        return view('confirmation');
     } 
 }

@@ -94,13 +94,11 @@
         </div>
     </div>
 </div>
+
 <script>
-      $(document).ready(function () {
+    $(document).ready(function () {
             UnoDropZone.init();
         });
-        
-</script>
-<script>
     $(document).ready(function ()
     {
         $(document).on('click','.formsave2', function(){
@@ -116,6 +114,8 @@
                     $('#error_intituleAgenda').text(error_intituleAgenda);
                     $('.intituleAgenda').css("background-color", "#EEEEEE");
                     $('.intituleAgenda').css("opacity","");
+                     $(this).css("color", "#FFFFF");
+                    $(this).css("border", "1px solid ##F49A41");
                     
                     
                 }
@@ -146,6 +146,8 @@
                     $('#error_contenuAgenda').text(error_contenuAgenda);
                     $('.contenuAgenda').css("background-color", "#EEEEEE");
                     $('.contenuAgenda').css("opacity","");
+                    $(this).css("color", "#FFFFF");
+                    $(this).css("border", "1px solid ##F49A41");
                     
                     
                 }
@@ -160,6 +162,8 @@
                     error_dateAgenda ='';
                     $('#error_dateAgenda').text(error_dateAgenda);
                     $('.dateAgenda').css("background-color", "#EEEEEE");
+                    $(this).css("color", "#FFFFF");
+                    $(this).css("border", "1px solid ##F49A41");
                     
                     
                 }
@@ -174,6 +178,8 @@
                     $('#error_lieuAgenda').text(error_lieuAgenda);
                     $('.lieuAgenda').css("background-color", "#EEEEEE");
                     $('.lieuAgenda').css("opacity","");
+                    $(this).css("color", "#FFFFF");
+                    $(this).css("border", "1px solid ##F49A41");
                     
                     
                 }
@@ -189,6 +195,8 @@
                     $('#error_heureAgenda').text(error_heureAgenda);
                     $('.heureAgenda').css("background-color", "#EEEEEE");
                     $('.heureAgenda').css("opacity","");
+                    $(this).css("color", "#FFFFF");
+                    $(this).css("border", "1px solid ##F49A41");
                 
                 }
 
@@ -203,6 +211,8 @@
                     $('#error_organisateurAgenda').text(error_organisateurAgenda);
                     $('.organisateurAgenda').css("background-color", "#EEEEEE");
                     $('.organisateurAgenda').css("opacity","");
+                    $(this).css("color", "#FFFFF");
+                    $(this).css("border", "1px solid ##F49A41");
                     
                     
                 }
@@ -218,6 +228,8 @@
                     $('#error_contactAgenda').text(error_contactAgenda);
                     $('.contactAgenda').css("background-color", "#EEEEEE");
                     $('.contactAgenda').css("opacity","");
+                    $(this).css("color", "#FFFFF");
+                    $(this).css("border", "1px solid ##F49A41");
                     
                     
                 }
@@ -246,7 +258,7 @@
                         url:"save",
                         data: data,
                         success: function (response){
-                           
+                         window.location.href = "\confirm";
                         }
                     });
                 }

@@ -25,8 +25,7 @@
                       ?>
                     <div class="tab">
                         <div class="container">
-                            <div class="row">
-                                    
+                            <div class="row">    
                                 <div class="col-6 ">
                                         <div class="col-12">
                                        <p>
@@ -86,11 +85,13 @@
                    <div class="container">
                     <div class="row">
                         <div class="col-12 p-2">
+                             <!-- Affichage de l'image pour chaque evenement crée au préalable-->
                            <img src="<?= base_url('images/concert.png')?>" style="width:100%; border-radius: 20px;">
                         </div>
                         <div class="col-12 " style="text-align:center;">
                             <div class="container">
                                 <div class="row">
+                                     <!-- Affichage l'intitulé de l'évenement-->
                                     <div class="col-12 mt-2" style="text-align:center;">
                                         <h3><?= $intituleAgenda?></h3>
                                     </div>
@@ -99,6 +100,7 @@
                                             <div class="col-4">
                                                 <i class="bi bi-calendar-week" style="color: #1F97C7; font-size:20px"></i>
                                             </div>
+                                             <!-- Affichage de la date de l'évenement-->
                                             <div class="col-8 mt-1">
                                                 <p> <?php setlocale(LC_TIME, ['fr', 'fra', 'fr_FR.UTF-8']);
                                                     $d1 = $dateAgenda;
@@ -114,6 +116,7 @@
                                             <div class="col-4">
                                                 <i class="bi bi-clock" style="color: #1F97C7; font-size:20px"></i>
                                             </div>
+                                             <!-- Affichage de l'heure de l'évenement -->
                                             <div class="col-8">
                                                 <p> <?= date_create($heureAgenda)->format('H:i');?></p>
                                             </div>
@@ -124,6 +127,7 @@
                                             <div class="col-4">
                                                 <i class="bi bi-geo-alt" style="color: #1F97C7; font-size:20px"></i>
                                             </div>
+                                             <!-- Affichage du lieu de l'évenement -->
                                             <div class="col-8">
                                                 <p><?= $lieuAgenda?></p>
                                             </div>
@@ -134,6 +138,7 @@
                                             <div class="col-4">
                                                <i class="bi bi-people" style="color: #1F97C7; font-size:20px"></i>
                                             </div>
+                                             <!-- Affichage une jauge si il y en a une -->
                                             <div class="col-8">
                                                 <p><?= $jaugeAgenda == 0 ? $jaugeAgenda='Pas de jauge' : $jaugeAgenda  ?></p>
                                             </div>
@@ -148,6 +153,7 @@
                                     <h4>Resumé</h4>
                                 </div>
                                 <div class="col-12">
+                                     <!-- Affichage le resumé de l'evenement -->
                                     <p><?= $contenuAgenda?></p>
                                 </div>
                             </div>
@@ -155,6 +161,7 @@
                         <div class="col-12">
                             <div class="row">
                                 <div class="col-12">
+                                     <!-- Affichage de l'organisateur de l'évenement -->
                                     <h4>Organisateur</h4>
                                 </div>
                                 <div class="col-1 ">
@@ -166,6 +173,7 @@
                                 <div class="col-1">
                                     <i class="bi bi-envelope my-auto" style="color: #1F97C7; font-size:20px"></i>
                                 </div>
+                                 <!-- Affichage du contact de l'organisateur -->
                                 <div class="col-4">
                                     <p><?= $contactAgenda?></p>
                                 </div>
@@ -173,6 +181,7 @@
                         </div>
                         <div class="col-12">
                             <div class="row">
+                                 <!-- Affichage des info complémentaires de l'évenement -->
                                 <div class="col-12">
                                     <h4>Plus d'infos</h4>
                                 </div>
@@ -182,7 +191,7 @@
                             </div>
                         </div>
                         <div class="col-12" style="text-align:center;">
-                            <button class="btn text-light" id="share" >Partager l'événement</button>
+                            <button class="btn text-light" id="share" data-toggle="tooltip" title="Prochainement" >Partager l'événement</button>
                         </div>
                     </div>
                 </div>
@@ -267,19 +276,20 @@
     border-left:    1px solid #AEAEAE;
     height:         100vh;
     width:          1px;       
-}
-#share{
-    background: #1F97C7; 
-    border-radius: 97px;
-}
- #share:hover{
-    background-color:lightblue;
-    
-}
-   
-
+    }
+    #share{
+        background: #1F97C7; 
+        border-radius: 97px;
+    }
+    #share:hover{
+        background-color:lightblue;
+        
+    }
 </style>
 <script >
+    $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
             function openCity(evt, cityName) {
             var i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("tabcontent");

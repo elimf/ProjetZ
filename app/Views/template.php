@@ -54,7 +54,7 @@
     }
         
   </style>
-<body >
+<body style="background-color: #F7F7F7" >
 <header>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top">
             <a class="navbar-brand text-dark" href="#">CoopEre</a>
