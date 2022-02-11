@@ -1,0 +1,30 @@
+CRITICAL - 2022-02-10 05:47:16 --> Class "App\Models\UsersModel" not found
+#0 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(825): App\Controllers\Agenda->select()
+#1 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agenda))
+#2 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/MAMP/htdocs/project/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-10 05:47:39 --> Class "App\Models\UsersModel" not found
+#0 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(825): App\Controllers\Agenda->select()
+#1 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agenda))
+#2 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/MAMP/htdocs/project/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-10 05:47:40 --> Class "App\Models\UsersModel" not found
+#0 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(825): App\Controllers\Agenda->select()
+#1 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agenda))
+#2 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/MAMP/htdocs/project/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-10 05:47:40 --> Class "App\Models\UsersModel" not found
+#0 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(825): App\Controllers\Agenda->select()
+#1 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agenda))
+#2 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/MAMP/htdocs/project/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-10 05:47:41 --> Class "App\Models\UsersModel" not found
+#0 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(825): App\Controllers\Agenda->select()
+#1 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agenda))
+#2 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/MAMP/htdocs/project/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
