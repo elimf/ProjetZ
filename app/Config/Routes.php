@@ -31,8 +31,7 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-
-
+$routes->get('/', 'Agenda::index');
 $routes->group('agenda', function ($routes) {
     $routes->add('add', 'Agenda::select');
     $routes->add('all', 'Agenda::index');
