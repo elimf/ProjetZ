@@ -19,4 +19,5 @@ class AgendaModel extends Model
         );
         return $result = (object)$query->getResult();
     }
+    
 }

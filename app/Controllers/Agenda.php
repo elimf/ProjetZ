@@ -51,4 +51,5 @@ class Agenda extends Controller
         
         return view('confirmation');
     } 
+    
 }

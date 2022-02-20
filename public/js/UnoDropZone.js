@@ -1,7 +1,6 @@
 var UnoDropZone = {
     settings: {
-        uploadContSelector: '.file-upload',
-        defaultMessage: 'Drop image in here or click to upload'
+        uploadContSelector: '.file-upload'
     },
     util: {
         executeFunctionByName: function (functionName, cont) {

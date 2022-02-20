@@ -1,99 +1,113 @@
 <?php ob_start(); ?>
-<div class="container">
-    <div class="row">
-        <div class="col-12 p-2">
-            <h2 style="color:#F49A41;font-size:24px;">Nouvelle date d’évènement</h2>
-            <hr style="border: 1px solid #F49A41;">
-        </div>
-     <div class="col-12  p-5 "style="background:#FFFFFF;border-radius: 20px;">
-            <div class="form-group">
-                <div class="form-group col-md-12">
-                    <label for="">Intitulé*</label> <span id="error_intituleAgenda" class="text-danger ms-3"></span>
-                    <input type="email" class="form-control intituleAgenda" id="" placeholder="Donnez un titre à votre évènement" style="background:#EEEEEE;border-radius: 13px;">
-                </div>
-                <div class="form-group col-md-6 ">
-                    <label for="">Photo de couverture*</label> <span id="error_couvertureAgenda" class="text-danger ms-3"></span>
-                            <div class="file-upload couvertureAgenda" data-input-name="input1">
+<div class="container-fluid">
+    <div class="row bg">
+                    <!-- Titre de la page -->
+            <div class="col-12 p-2 ">
+                <h2 style="color:#F49A41;font-size:24px;">Nouvelle date d’évènement</h2>
+                <hr style="border: 1px solid #F49A41;">
+            </div>
+            <!-- div pour le Formulaire-->
+            <div class="col-12  p-5 "style="background:#FFFFFF;border-radius: 20px;">
+                            <!-- Formulaire -->
+                        <div class="form-group">
+                            <!-- Partie pour l'intiulé-->
+                            <div class="form-group  col-md-12">
+                                <label for="">Intitulé*</label> <span id="error_intituleAgenda" class="text-danger ms-3"></span>
+                                <input type="email" class="form-controle intituleAgenda" id="" placeholder="Donnez un titre à votre évènement" style="background:#EEEEEE;border-radius: 13px;">
+                            </div>
+                             <!--photo de couverture -->
+                            <div class="form-group col-12 col-md-6 ">
+                                <label for="">Photo de couverture*</label> <span id="error_couvertureAgenda" class="text-danger ms-3"></span>
+                                        <div class="file-upload couvertureAgenda" data-input-name="input1">
 
-                            </div>                       
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="form-group col-md-12">
-                    <label for="inputAddress">Contenu *</label> <span id="error_contenuAgenda" class="text-danger ms-3"></span>
-                    <input type="text" class="form-control contenuAgenda"  placeholder="Que va-t-il se passer lors de votre évènement ? " style="background:#EEEEEE;border-radius: 13px;">
-                </div>
-            </div>
-            
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="">Date*</label> <span id="error_dateAgenda" class="text-danger ms-3"></span>
-                    <input type="date" class="form-control dateAgenda"  style="background:#EEEEEE;border-radius: 13px;">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="">Lieu*</label> <span id="error_lieuAgenda" class="text-danger ms-3"></span>
-                    <div class="right-inner-addon input-container">
-                        <i class="bi bi-geo-alt" id="geo"></i>
-                        <input type="text" class="form-control lieuAgenda"  placeholder="Où se passe l’évènement ?" style="background:#EEEEEE;border-radius: 13px;">
-                    </div>
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="">Heure*</label> <span id="error_heureAgenda" class="text-danger ms-3"></span>
-                    <input type="time" class="form-control heureAgenda"  style="background:#EEEEEE;border-radius: 13px;">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="">Jauge</label> 
-                        <div class="right-inner-addon input-container">
-                            <i class="bi bi-people" id="peo"></i>
-                            <input type="number" class="form-control jaugeAgenda" min="0" placeholder="Nb de personne max accueillies" style="background:#EEEEEE;border-radius: 13px;">
+                                        </div>                       
+                            </div>
                         </div>
-                </div>
-                <?php foreach ($user as $sp) {
-                      $pseudoUsers        = $sp->pseudoUsers;
-                      $mailUsers       = $sp->mailUsers;
-                      ?>
-                <div class="form-group col-md-6">
-                    <label for="">Organisateur*</label> <span id="error_organisateurAgenda" class="text-danger ms-3"></span>
-                    <input type="text" class="form-control organisateurAgenda"  placeholder="Est-ce vous ou un externe de votre réseau ? " value="<?= $pseudoUsers?>" style="background:#EEEEEE;border-radius: 13px;">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="">Contact*</label> <span id="error_contactAgenda" class="text-danger ms-3"></span>
-                    <input type="text" class="form-control contactAgenda"  placeholder="Email ou téléphone de l’organisateur" value="<?= $mailUsers?>" style="background:#EEEEEE;border-radius: 13px;" >
-                </div>
-                      <?php } ?>
-            </div>
-            <div class="form-group">
-                <label for="">Plus d'infos</label>
-                <input type="text" class="form-control infoAgenda"  placeholder="Site internet de l’organisateur ou de l’évènement, autre, ..." style="background:#EEEEEE;border-radius: 13px;">
-            </div>
-            <div class="form-group">
-                 <label for="">Pousser l’évènement</label>
-                <div class="form-check">
-                <input class="form-check-input pousserAgenda" style="background:green" type="checkbox" id="gridCheck">
-                 <p class="form-check-label" for="gridCheck">
-                    Mettre en avant l’évènement sur la page d’accueil de votre réseau
-                </p>
-                </div>
-            </div>
-            <div class="form-group ">
-                    <div class="row ">
-                        <div class="col text-right">
-                                 <a href="<?= base_url() . '\agenda\all' ?>"> <button type="button" class="btn " style="color:#F49A41; background:#FFFFFF;border-radius: 45px;">Retour à l'agenda </button></a>
+                        <div class="form-group">
+                            <!-- CONTENU -->
+                            <div class="form-group col-md-12">
+                                <label for="inputAddress">Contenu *</label> <span id="error_contenuAgenda" class="text-danger ms-3"></span>
+                                <input type="text" class="form-controle contenuAgenda"  placeholder="Que va-t-il se passer lors de votre évènement ? " style="background:#EEEEEE;border-radius: 13px;">
+                            </div>
                         </div>
-                        <div class="col ">
-                                 <button type="button" class="btn formsave2"  style="color:#F49A41; background:#FFFFFF;border-radius: 45px; border: 1px solid #F49A41;box-sizing: border-box;">Ajouter à l'agenda</button>
+                        <div class="form-row">
+                            <!-- DATE-->
+                            <div class="form-group col-md-6">
+                                <label for="">Date*</label> <span id="error_dateAgenda" class="text-danger ms-3"></span>
+                                <input type="date" class="form-controle dateAgenda"  style="background:#EEEEEE;border-radius: 13px;">
+                            </div>
+                            <!-- LIEU -->
+                            <div class="form-group col-md-6">
+                                <label for="">Lieu*</label> <span id="error_lieuAgenda" class="text-danger ms-3"></span>
+                                <div class="right-inner-addon input-container">
+                                    <i class="bi bi-geo-alt" id="geo"></i>
+                                    <input type="text" class="form-controle lieuAgenda"  placeholder="Où se passe l’évènement ?" style="background:#EEEEEE;border-radius: 13px;">
+                                </div>
+                            </div>
+                            <!-- HEURE -->
+                            <div class="form-group col-md-6">
+                                <label for="">Heure*</label> <span id="error_heureAgenda" class="text-danger ms-3"></span>
+                                <input type="time" class="form-controle heureAgenda"  style="background:#EEEEEE;border-radius: 13px;">
+                            </div>
+                            <!-- JAUGE -->
+                            <div class="form-group col-md-6">
+                                <label for="">Jauge</label> 
+                                    <div class="right-inner-addon input-container">
+                                        <i class="bi bi-people" id="peo"></i>
+                                        <input type="number" class="form-control jaugeAgenda" min="0" placeholder="Nb de personne max accueillies" style="background:#EEEEEE;border-radius: 13px;">
+                                    </div>
+                            </div>
+                            <?php foreach ($user as $sp) {
+                                $pseudoUsers        = $sp->pseudoUsers;
+                                $mailUsers       = $sp->mailUsers;
+                                ?>
+                                <!-- ORGANISATEUR-->
+                            <div class="form-group col-md-6">
+                                <label for="">Organisateur*</label> <span id="error_organisateurAgenda" class="text-danger ms-3"></span>
+                                <input type="text" class="form-controle organisateurAgenda"  placeholder="Est-ce vous ou un externe de votre réseau ? " value="<?= $pseudoUsers?>" style="background:#EEEEEE;border-radius: 13px;">
+                            </div>
+                            <!-- CONTACT-->
+                            <div class="form-group col-md-6">
+                                <label for="">Contact*</label> <span id="error_contactAgenda" class="text-danger ms-3"></span>
+                                <input type="text" class="form-controle contactAgenda"  placeholder="Email ou téléphone de l’organisateur" value="<?= $mailUsers?>" style="background:#EEEEEE;border-radius: 13px;" >
+                            </div>
+                                <?php } ?>
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <label for="">Plus d'infos</label>
+                            <input type="text" class="form-controle infoAgenda"  placeholder="Site internet de l’organisateur ou de l’évènement, autre, ..." style="background:#EEEEEE;border-radius: 13px;">
+                        </div>
+                        <div class="form-group">
+                            <!--POUSSER L'EVENEMENT -->
+                            <label for="">Pousser l’évènement</label>
+                            <div class="form-check">
+                            <input class="form-check-input pousserAgenda" style="background:green" type="checkbox" id="gridCheck">
+                            <p class="form-check-label" for="gridCheck">
+                                Mettre en avant l’évènement sur la page d’accueil de votre réseau
+                            </p>
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <!-- BAS DU FORMULAIRE-->
+                                <div class="row  ">
+                                    <div class="col-12 col-sm-6">
+                                            <a href="<?= base_url() . '\agenda\all' ?>"> <button type="button" class="btn " style="color:#F49A41; background:#FFFFFF;border-radius: 45px;">Retour à l'agenda </button></a>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                            <button type="button" class="btn formsave2"  style="color:#F49A41; background:#FFFFFF;border-radius: 45px; border: 1px solid #F49A41;box-sizing: border-box;">Ajouter à l'agenda</button>
+                                    </div>
+                                </div>
+                        </div>
+                            <p id="thisT" >Merci de remplir toutes les informations obligatoires marquées d’une étoile</p>
+                        <div>
+                            <!-- INFO SUR L'UTILISATEUR CONNECTÉ-->
+                        <div class="form-group col-md-6">
+                                <input type="hidden" class="form-controle idUser" value="1" >
+                        </div>
             </div>
-                <p id="thisT" >Merci de remplir toutes les informations obligatoires marquées d’une étoile</p>
-            <div>
-                <div class="form-group col-md-6">
-                    <input type="hidden" class="form-control idUser" value="1" >
-                </div>
-            </div>
-        </div>
     </div>
 </div>
+
 
 <script>
     $(document).ready(function () {
@@ -311,11 +325,12 @@
             margin: 0em !important;
             box-sizing: border-box;
     }
-    .form-control{
-        width: 100%;
+    .form-controle{
+             width: 100%;
             padding: 1em !important;
             margin: 0em !important;
             box-sizing: border-box;
+            border: 0px solid white;
 
     }
     #geo{
