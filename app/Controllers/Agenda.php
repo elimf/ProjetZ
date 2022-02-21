@@ -29,7 +29,8 @@ class Agenda extends Controller
         $agenda = new \App\Models\AgendaModel();
         $data = [
             'intituleAgenda' => $this->request->getPost('intituleAgenda'),
-            'couvertureAgenda' => $this->request->getPost('couvertureAgenda'),
+            'couvertureAgenda' => $this->request->getFile('couvertureAgenda'),
+            'couvertureAgenda'->move(WRITEPATH . 'uploads'),
             'contenuAgenda'=> $this->request->getPost('contenuAgenda'),
             'dateAgenda' => $this->request->getPost('dateAgenda'),
             'lieuAgenda' => $this->request->getPost('lieuAgenda'),
@@ -41,6 +42,7 @@ class Agenda extends Controller
             'pousserAgenda' => $this->request->getPost('pousserAgenda'),
             'idUser' => $this->request->getPost('idUser'),
         ];
+       
         $agenda->save($data);
        
       return;

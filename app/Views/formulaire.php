@@ -1,13 +1,13 @@
 <?php ob_start(); ?>
 <div class="container-fluid">
-    <div class="row bg">
+    <div class="row justify-content-center ">
                     <!-- Titre de la page -->
             <div class="col-12 p-2 ">
                 <h2 style="color:#F49A41;font-size:24px;">Nouvelle date d’évènement</h2>
                 <hr style="border: 1px solid #F49A41;">
             </div>
             <!-- div pour le Formulaire-->
-            <div class="col-12  p-5 "style="background:#FFFFFF;border-radius: 20px;">
+            <div class="col-12   "style="background:#FFFFFF;border-radius: 20px;">
                             <!-- Formulaire -->
                         <div class="form-group">
                             <!-- Partie pour l'intiulé-->
@@ -18,7 +18,7 @@
                              <!--photo de couverture -->
                             <div class="form-group col-12 col-md-6 ">
                                 <label for="">Photo de couverture*</label> <span id="error_couvertureAgenda" class="text-danger ms-3"></span>
-                                        <div class="file-upload couvertureAgenda" data-input-name="input1">
+                                        <div class="file-upload couvertureAgenda"  data-input-name="input1">
 
                                         </div>                       
                             </div>
@@ -104,6 +104,7 @@
                         <div class="form-group col-md-6">
                                 <input type="hidden" class="form-controle idUser" value="1" >
                         </div>
+
             </div>
     </div>
 </div>
@@ -133,21 +134,25 @@
                     
                     
                 }
-                
-                /*if ($.trim($('.couvertureAgenda').val()) == '' ) {
+                    if ($.trim($("input[name='input1']").val()).length == 0) {
                     $('.couvertureAgenda').css("background-color", "#FF2D2D");
                     $('.couvertureAgenda').css("opacity","0.3");
                     $(this).css("color", "#FF2D2D");
                     $(this).css("border", "1px solid #FF2D2D");
                     $("#thisT").css("visibility","visible");
-                } else {
+                    console.log($(" input[name='input1']").val());
+                    console.log("yes");
+                        
+                    }else{
                     error_couvertureAgenda ='';
                     $('#error_couvertureAgenda').text(error_couvertureAgenda);
-                    $('.couvertureAgenda').css("opacity","");
-                    console.log($('.couvertureAgenda').val());
-                    
-                    
-                }*/
+                    $('.couvertureAgenda').css("opacity","1");
+                    console.log($("input[name='input1']").val());
+                            console.log("yes yes");   
+                    }
+                    var path = $("input[name='input1']").val();
+                    var filename = path.replace(/^.*\\/, "");
+                        console.log(filename);
 
                 if ($.trim($('.contenuAgenda').val()).length == 0 ) {
                     $('.contenuAgenda').css("background-color", "#FF2D2D");
@@ -248,13 +253,14 @@
                     
                 }
 
-                if (error_intituleAgenda != ''|| error_contenuAgenda != ''|| error_dateAgenda != '' || error_lieuAgenda != ''||  error_heureAgenda != ''|| error_organisateurAgenda != ''|| error_contactAgenda != '') {
+                if (error_intituleAgenda != ''|| error_contenuAgenda != ''|| error_couvertureAgenda != ''|| error_dateAgenda != '' || error_lieuAgenda != ''||  error_heureAgenda != ''|| error_organisateurAgenda != ''|| error_contactAgenda != '') {
                         return false;
                 }else{
                     $("#thisT").css("visibility","hidden");
+                     
                     var data={
                         'intituleAgenda':$('.intituleAgenda').val(),
-                        'couvertureAgenda':$('.couvertureAgenda').val(),
+                        'couvertureAgenda':$("input[name='input1']").val(),
                         'contenuAgenda':$('.contenuAgenda').val(),
                         'dateAgenda':$('.dateAgenda').val(),
                         'lieuAgenda':$('.lieuAgenda').val(),
@@ -269,6 +275,7 @@
                     console.log(data);
                     $.ajax({
                         method:"POST",
+                        enctype: 'multipart/form-data',
                         url:"save",
                         data: data,
                         success: function (response){
@@ -347,6 +354,85 @@
         color:aqua;
         font-size: 30px;
     }
+      .file-upload {
+            width: 100%;
+            height: 190px;
+            background-color: #EEEEEE;
+            border-radius: 13px;            
+        }
+        
+        .file-upload:hover {
+            cursor: pointer;
+            /*        border-style: solid;
+            border-width: 1px;
+            border-color: rgb(221, 220, 220);*/
+        }
+        
+        .file-upload .filethumbnail img.img {
+             width: 100%;
+            height: 190px;
+            border-radius: 13px;
+        }
+        
+        .file-upload .file-input {
+            display: none;
+        }
+        
+        .file-upload .drop-click-zone {
+             width: 100%;
+            height: 190px;
+            /* position: absolute; */
+            /* z-index: 2;*/
+            /*            background-color: red;*/
+        }
+        
+        .file-upload .info {
+            display: none;
+        }
+        
+        .file-upload .filethumbnail {
+            /*            background-color: green;*/
+            
+            width: 100%;
+            height: 190px;
+            /* top: -100%;*/
+            
+            position: relative;
+            /* z-index: -1;*/
+        }
+        
+      
+        .file-upload .message {
+            position: relative;
+            top: -100%;
+            color: rgba(245, 245, 245, 0);
+            height: 100%;
+            display: none;
+            text-align: center;
+        }
+        
+        .btn-file {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-file input[type=file] {
+            position: absolute;
+            top: 0;
+            right: 0;
+            min-width: 100%;
+            min-height: 100%;
+            font-size: 100px;
+            text-align: right;
+            filter: alpha(opacity=0);
+            opacity: 0;
+            outline: none;
+            background: white;
+            cursor: inherit;
+            display: block;
+    
+        }
+
     
     
 </style>

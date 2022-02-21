@@ -1,0 +1,89 @@
+CRITICAL - 2022-02-21 06:24:35 --> shuffle(): Argument #1 ($array) must be of type array, stdClass given
+#0 /Applications/MAMP/htdocs/project/app/Views/formulaire.php(5): shuffle(Object(stdClass))
+#1 /Applications/MAMP/htdocs/project/system/View/View.php(210): include('/Applications/M...')
+#2 /Applications/MAMP/htdocs/project/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /Applications/MAMP/htdocs/project/system/Common.php(1089): CodeIgniter\View\View->render('formulaire', Array, true)
+#4 /Applications/MAMP/htdocs/project/app/Controllers/Agenda.php(24): view('formulaire', Array)
+#5 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(825): App\Controllers\Agenda->select()
+#6 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agenda))
+#7 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Applications/MAMP/htdocs/project/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-21 06:24:36 --> shuffle(): Argument #1 ($array) must be of type array, stdClass given
+#0 /Applications/MAMP/htdocs/project/app/Views/formulaire.php(5): shuffle(Object(stdClass))
+#1 /Applications/MAMP/htdocs/project/system/View/View.php(210): include('/Applications/M...')
+#2 /Applications/MAMP/htdocs/project/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /Applications/MAMP/htdocs/project/system/Common.php(1089): CodeIgniter\View\View->render('formulaire', Array, true)
+#4 /Applications/MAMP/htdocs/project/app/Controllers/Agenda.php(24): view('formulaire', Array)
+#5 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(825): App\Controllers\Agenda->select()
+#6 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agenda))
+#7 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Applications/MAMP/htdocs/project/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-21 06:26:15 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::fetchAll()
+#0 /Applications/MAMP/htdocs/project/app/Controllers/Agenda.php(23): App\Models\UsersModel->infoUser()
+#1 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(825): App\Controllers\Agenda->select()
+#2 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agenda))
+#3 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Applications/MAMP/htdocs/project/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-21 06:26:16 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::fetchAll()
+#0 /Applications/MAMP/htdocs/project/app/Controllers/Agenda.php(23): App\Models\UsersModel->infoUser()
+#1 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(825): App\Controllers\Agenda->select()
+#2 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agenda))
+#3 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Applications/MAMP/htdocs/project/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-02-21 06:28:17 --> Unknown column 'id' in 'where clause'
+CRITICAL - 2022-02-21 06:28:17 --> Unknown column 'id' in 'where clause'
+#0 /Applications/MAMP/htdocs/project/system/Database/MySQLi/Connection.php(292): mysqli->query('SELECT * FROM u...', 0)
+#1 /Applications/MAMP/htdocs/project/system/Database/BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM u...')
+#2 /Applications/MAMP/htdocs/project/system/Database/BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM u...')
+#3 /Applications/MAMP/htdocs/project/app/Models/UsersModel.php(18): CodeIgniter\Database\BaseConnection->query('SELECT * FROM u...')
+#4 /Applications/MAMP/htdocs/project/app/Controllers/Agenda.php(23): App\Models\UsersModel->infoUser()
+#5 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(825): App\Controllers\Agenda->select()
+#6 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agenda))
+#7 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Applications/MAMP/htdocs/project/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-02-21 06:28:19 --> Unknown column 'id' in 'where clause'
+CRITICAL - 2022-02-21 06:28:19 --> Unknown column 'id' in 'where clause'
+#0 /Applications/MAMP/htdocs/project/system/Database/MySQLi/Connection.php(292): mysqli->query('SELECT * FROM u...', 0)
+#1 /Applications/MAMP/htdocs/project/system/Database/BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM u...')
+#2 /Applications/MAMP/htdocs/project/system/Database/BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM u...')
+#3 /Applications/MAMP/htdocs/project/app/Models/UsersModel.php(18): CodeIgniter\Database\BaseConnection->query('SELECT * FROM u...')
+#4 /Applications/MAMP/htdocs/project/app/Controllers/Agenda.php(23): App\Models\UsersModel->infoUser()
+#5 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(825): App\Controllers\Agenda->select()
+#6 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agenda))
+#7 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Applications/MAMP/htdocs/project/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-21 07:12:20 --> shuffle(): Argument #1 ($array) cannot be passed by reference
+#0 /Applications/MAMP/htdocs/project/app/Controllers/Agenda.php(23): App\Models\UsersModel->infoUser()
+#1 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(825): App\Controllers\Agenda->select()
+#2 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agenda))
+#3 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Applications/MAMP/htdocs/project/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-21 08:26:20 --> Undefined variable $dateAgenda
+#0 /Applications/MAMP/htdocs/project/app/Views/accueil.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/Applications/M...', 26)
+#1 /Applications/MAMP/htdocs/project/system/View/View.php(210): include('/Applications/M...')
+#2 /Applications/MAMP/htdocs/project/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /Applications/MAMP/htdocs/project/system/Common.php(1089): CodeIgniter\View\View->render('accueil', Array, true)
+#4 /Applications/MAMP/htdocs/project/app/Controllers/Agenda.php(16): view('accueil', Array)
+#5 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(825): App\Controllers\Agenda->index()
+#6 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agenda))
+#7 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Applications/MAMP/htdocs/project/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-21 08:26:21 --> Undefined variable $dateAgenda
+#0 /Applications/MAMP/htdocs/project/app/Views/accueil.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/Applications/M...', 26)
+#1 /Applications/MAMP/htdocs/project/system/View/View.php(210): include('/Applications/M...')
+#2 /Applications/MAMP/htdocs/project/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /Applications/MAMP/htdocs/project/system/Common.php(1089): CodeIgniter\View\View->render('accueil', Array, true)
+#4 /Applications/MAMP/htdocs/project/app/Controllers/Agenda.php(16): view('accueil', Array)
+#5 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(825): App\Controllers\Agenda->index()
+#6 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agenda))
+#7 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Applications/MAMP/htdocs/project/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}

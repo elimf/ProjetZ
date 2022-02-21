@@ -15,7 +15,7 @@ class UsersModel extends Model
     {
         $db = \Config\Database::connect();
         $query = $db->query(
-            "SELECT * FROM users where idUser= 1"
+            "SELECT * FROM users where idUser= 0"
         );
         return $result = (object)$query->getResult();
     }

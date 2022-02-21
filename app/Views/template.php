@@ -4,7 +4,6 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="<?= base_url()?>\css\UnoDropZone.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Bootstrap Icons -->
@@ -27,6 +26,7 @@
         #fond
         {
             margin-top:90px;
+            width:100%;
             background-color: #F7F7F7;
         }
 
@@ -78,11 +78,11 @@
                         <li class="nav-item"></li>
             </ul>
         <div class="container-fluid">
-            <div class="row ">
-                <div class=" col-lg-9 col-md-6 ">
+            <div class="row justify-content-end">
+                <div class="col-md-6 col-lg-7  ">
                     
                 </div>
-                <div class=" col-md-3 col-lg-2 ">
+                <div class=" col-md-3 col-lg-3 ">
                     <form  class="form-group has-search my-auto">
                         <button  type="submit" class="btn form-control-feedback" style="background: transparent">
                             <i class="bi bi-search"></i>
@@ -91,8 +91,8 @@
                     </form>
                   
                 </div>
-                <div class="col-md-2 col-lg-1">
-                    <div class="row">
+                <div class="col-md-2 col-lg-0 ">
+                    <div class="row justify-content-end" >
                         <div class="col-0 m-0">
                             <button class="btn btn-info mx-1"><i class="bi bi-bell"></i></button>
                         </div>

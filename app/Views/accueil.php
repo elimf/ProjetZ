@@ -1,8 +1,8 @@
 <?php ob_start(); ?>
-<div class="container-fluid">
+<div class="container-fluid " >
     <div class="row ">
         <!-- Permet d'acceder au formulaire qui crée les évenements-->
-        <div class="col-12 text-start mb-3">
+        <div class="col-12 text-start mb-3" style="margin-left:10%">
             <a href="<?= base_url() . '\agenda\add' ?>">
                 <button class="btn btn-primary" id="btndate">
                     Nouvelle Date
@@ -12,63 +12,60 @@
     </div>
 </div>
 
-<div class="container-fluid" id="bgsound">
-    <div class="row "style="margin-bottom:5%;">
+<div class="container " id="bgsound">
+    <div class="row justify-content-center ">
         <!-- Partie  de gauche de la partie accueil de l'agenda-->
-        <div class="col-12 col-md-7 col-lg-5 ">
+        <div class="col-12  col-lg-5 mb-5  ">
             <!-- Affiche depuis le controlleur les données selon une requete passée par AgendaModel-->
             <?php foreach ($agenda as $sp) {
                                         $intituleAgenda    = $sp->intituleAgenda;
             $heureAgenda = $sp->heureAgenda; $dateAgenda = $sp->dateAgenda;
             $lieuAgenda = $sp->lieuAgenda; $idAgenda = $sp->idAgenda; ?>
-            <div class="tab" style="background:#FFFFFF;" >
-                <div class="container " >
-                    <div class="row   " >
-                        <!--Partie ou se trouve la date et le lieu -->
-                        <div class="col-5   ">
+            <div class="card" style="width: 100%;">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" data-toggle="tooltip" >
+                        <div class="container-fluid w-100">
                             <div class="row ">
-                                    <div class="col-12  ">
-                                        <p style="font-size:1rem;">
-                                            <!-- Affichage de la date pour chaque evenement crée au préalable-->
-                                            <?php
-                                                        setlocale(LC_TIME, ['fr', 'fra', 'fr_FR.UTF-8']);
-                                                        $d3 = $dateAgenda;
-                                                        $tmstp3 = strtotime($d3);
-                                                        $dfr3 = strftime(' %d %B %Y', $tmstp3);
-                                                        echo $dfr3
-
-                                                        ?>
-                                        </p>
+                                <div class="col-12 col-lg-5">
+                                    <div class="col-12 mb-1">
+                                        <?php
+                                        setlocale(LC_TIME, ['fr', 'fra', 'fr_FR.UTF-8']);
+                                        $d3 = $dateAgenda;
+                                        $tmstp3 = strtotime($d3);
+                                        $dfr3 = strftime(' %d %B %Y', $tmstp3);
+                                        echo $dfr3
+                                        ?>
                                     </div>
                                     <div class="col-12 ">
-                                        <?= date_create($heureAgenda)->format('H:i');?>
+                                         <?= date_create($heureAgenda)->format('H:i');?>
                                     </div>
-                                </div>  
+                                    
+                                </div>
+                                <div class="col-12 col-lg-5 text-center align-baseline">
+                                   <?= $intituleAgenda?>
+                                </div>
+                                <div class="col-12 col-lg-1 ">
+                                    <div class="row justify-content-center ">
+                                            <a  class="align-middle"
+                                        style="width:auto%;height:1rem;background:none;"
+                                        onclick="openCity(event, '<?= $idAgenda?>')" >
+                                       <i class=" arrow bi bi-arrow-right-short "></i></a>
+                                    </div>
+                                </div>
                             </div>
-                         <!-- Partie centrale concernant l'evenement-->
-                        <div class="col-5 text-start  ">
-                            <?= $intituleAgenda?>
                         </div>
-                             <!-- Bouton permettant d'afficher chaque evenement crée au préalable-->
-                        <div class="col-1 my-auto   ">     
-                            <button
-                                class="btn  " style="width:10%;height:1rem;background:none;"
-                                onclick="openCity(event, '<?= $idAgenda?>')" >
-                                <i class="arrow"> > </i>
-                            </button>
-                        </div>
-                        
-                    </div>
-                </div>
+                    </li>
+                           
+                </ul>
             </div>
                 <?php } ?>
                 <div class="d-none d-md-block" style="margin-left:100%;">
-                     <hr>
+                     <hr style="z-index:2;position:absolute;height:100%;top:0">
                 </div>
         </div>
         
         <!-- Partie  de droite de la partie accueil de l'agenda-->
-        <div class="col-12 col-md-5 col-lg-6 mt-2 ">
+        <div class="col-12 col-lg-7 mt-2 ">
             <?php foreach ($agenda as $sp) {
                         $intituleAgenda    = $sp->intituleAgenda; $heureAgenda =
             $sp->heureAgenda; $dateAgenda = $sp->dateAgenda; $lieuAgenda =
@@ -78,7 +75,7 @@
             $contenuAgenda =$sp->contenuAgenda; $idAgenda = $sp->idAgenda; ?>
             <div id="<?= $idAgenda?>" class="tabcontent">
                 <div class="container">
-                    <div class="row">
+                    <div class="row justify-content-center">
                         <div class="col-12  ">
                             <!-- Affichage de l'image pour chaque evenement crée au préalable-->
                             <img
@@ -293,8 +290,8 @@
     }
     #bgsound{
         background-color:#FFFFFF;
-        width:80%;
-        height:50%;
+        height:auto;
+       padding:0;
     }
     
      .tab {
