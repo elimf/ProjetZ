@@ -102,13 +102,13 @@
                                                     class="bi bi-calendar-week"
                                                     style="
                                                         color: #1f97c7;
-                                                        font-size: 1em;
+                                                        font-size: 1,5em;
                                                     "
                                                 ></i>
                                             </div>
                                             <!-- Affichage de la date de l'évenement-->
                                             <div class="col-8 mt-1">
-                                                <p style="font-size: 1rem;">
+                                                <p style="font-size: 1,5rem;">
                                                     <?php setlocale(LC_TIME, ['fr', 'fra', 'fr_FR.UTF-8']);
                                                     $d1 = $dateAgenda;
                                                     $tmstp1 = strtotime($d1);
@@ -126,13 +126,13 @@
                                                     class="bi bi-clock"
                                                     style="
                                                         color: #1f97c7;
-                                                        font-size: 1em;
+                                                        font-size: 1,5em;
                                                     "
                                                 ></i>
                                             </div>
                                             <!-- Affichage de l'heure de l'évenement -->
                                             <div class="col-8">
-                                                <p style="font-size: 1rem;">
+                                                <p style="font-size: 1,5rem;">
                                                     <?= date_create($heureAgenda)->format('H:i');?>
                                                 </p>
                                             </div>
@@ -145,13 +145,13 @@
                                                     class="bi bi-geo-alt"
                                                     style="
                                                         color: #1f97c7;
-                                                        font-size: 1em;
+                                                        font-size: 1,5em;
                                                     "
                                                 ></i>
                                             </div>
                                             <!-- Affichage du lieu de l'évenement -->
                                             <div class="col-8">
-                                                <p style="font-size: 1rem;"><?= $lieuAgenda?></p>
+                                                <p style="font-size: 1,5rem;"><?= $lieuAgenda?></p>
                                             </div>
                                         </div>
                                     </div>
@@ -162,13 +162,13 @@
                                                     class="bi bi-people"
                                                     style="
                                                         color: #1f97c7;
-                                                        font-size: 1rem;
+                                                        font-size: 1,5rem;
                                                     "
                                                 ></i>
                                             </div>
                                             <!-- Affichage une jauge si il y en a une -->
                                             <div class="col-8 " >
-                                                <p style="font-size: 1rem;"> 
+                                                <p style="font-size: 1,5rem;"> 
                                                     <?= $jaugeAgenda == 0 ? $jaugeAgenda='Pas de jauge' : $jaugeAgenda  ?>
                                                 </p>
                                             </div>
@@ -189,7 +189,7 @@
                             </div>
                         </div>
                         <div class="col-12 ">
-                            <div class="row ">
+                            <div class="row justify-content-between">
                                 <div class="col-12">
                                     <!-- Affichage de l'organisateur de l'évenement -->
                                     <h4>Organisateur</h4>
@@ -206,15 +206,15 @@
                                 </div>
                                 </div>
                                 
-                                <div class="row">
-                                    <div class="col-2 ">
+                                <div class="row ">
+                                    <div class="col-3 " style="text-align: center">
                                     <i
                                         class="bi bi-envelope my-auto"
                                         style="color: #1f97c7; font-size: 2rem"
                                     ></i>
                                 </div>
                                 <!-- Affichage du contact de l'organisateur -->
-                                <div class="col-10 mt-2  ">
+                                <div class="col-9 mt-2  "style="text-align: end">
                                     <p><?= $contactAgenda?></p>
                                 </div>
                                 </div>

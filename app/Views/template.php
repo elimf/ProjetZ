@@ -79,10 +79,10 @@
             </ul>
         <div class="container-fluid">
             <div class="row ">
-                <div class="col-md-6 ">
+                <div class=" col-lg-9 col-md-6 ">
                     
                 </div>
-                <div class="col-md-3  ">
+                <div class=" col-md-3 col-lg-2 ">
                     <form  class="form-group has-search my-auto">
                         <button  type="submit" class="btn form-control-feedback" style="background: transparent">
                             <i class="bi bi-search"></i>
@@ -91,12 +91,12 @@
                     </form>
                   
                 </div>
-                <div class="col-md-2 ">
+                <div class="col-md-2 col-lg-1">
                     <div class="row">
-                        <div class="col-6 m-0">
+                        <div class="col-0 m-0">
                             <button class="btn btn-info mx-1"><i class="bi bi-bell"></i></button>
                         </div>
-                        <div class="col-6">
+                        <div class="col-0">
                             <button class="btn mx-1"><i class="bi bi-person-circle"></i></button>
                         </div>
                     </div>
