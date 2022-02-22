@@ -2,21 +2,21 @@
 <div class="container-fluid">
     <div class="row justify-content-center ">
                     <!-- Titre de la page -->
-            <div class="col-12 p-2 ">
-                <h2 style="color:#F49A41;font-size:24px;">Nouvelle date d’évènement</h2>
-                <hr style="border: 1px solid #F49A41;">
+            <div class="col-9 col-sm-10 col-md-10 col-lg-8  p-2 ">
+                <h2 style="color:#F49A41;font-size:3vw;">Nouvelle date d’évènement</h2>
+                <hr style="border: 1px solid #F49A41;font-size:auto;">
             </div>
             <!-- div pour le Formulaire-->
-            <div class="col-12   "style="background:#FFFFFF;border-radius: 20px;">
+            <div class="col-9 col-sm-10 col-md-10 col-lg-8 p-4  "style="background:#FFFFFF;border-radius: 20px;">
                             <!-- Formulaire -->
                         <div class="form-group">
                             <!-- Partie pour l'intiulé-->
-                            <div class="form-group  col-md-12">
+                            <div class="form-group  col-md-12 ">
                                 <label for="">Intitulé*</label> <span id="error_intituleAgenda" class="text-danger ms-3"></span>
-                                <input type="email" class="form-controle intituleAgenda" id="" placeholder="Donnez un titre à votre évènement" style="background:#EEEEEE;border-radius: 13px;">
+                                <input type="text" class="form-controle intituleAgenda" id="" placeholder="Donnez un titre à votre évènement" style="background:#EEEEEE;border-radius: 13px;">
                             </div>
-                             <!--photo de couverture -->
-                            <div class="form-group col-12 col-md-6 ">
+                             <!--COUVERTURE -->
+                            <div class="form-group col-12 ">
                                 <label for="">Photo de couverture*</label> <span id="error_couvertureAgenda" class="text-danger ms-3"></span>
                                         <div class="file-upload couvertureAgenda"  data-input-name="input1">
 
@@ -39,7 +39,7 @@
                             <!-- LIEU -->
                             <div class="form-group col-md-6">
                                 <label for="">Lieu*</label> <span id="error_lieuAgenda" class="text-danger ms-3"></span>
-                                <div class="right-inner-addon input-container">
+                                <div class="right-inner-addon input-container" >
                                     <i class="bi bi-geo-alt" id="geo"></i>
                                     <input type="text" class="form-controle lieuAgenda"  placeholder="Où se passe l’évènement ?" style="background:#EEEEEE;border-radius: 13px;">
                                 </div>
@@ -52,7 +52,7 @@
                             <!-- JAUGE -->
                             <div class="form-group col-md-6">
                                 <label for="">Jauge</label> 
-                                    <div class="right-inner-addon input-container">
+                                    <div class="right-inner-addon input-container"  >
                                         <i class="bi bi-people" id="peo"></i>
                                         <input type="number" class="form-control jaugeAgenda" min="0" placeholder="Nb de personne max accueillies" style="background:#EEEEEE;border-radius: 13px;">
                                     </div>
@@ -89,11 +89,11 @@
                         </div>
                         <div class="form-group ">
                             <!-- BAS DU FORMULAIRE-->
-                                <div class="row  ">
-                                    <div class="col-12 col-sm-6">
+                                <div class="row justify-content-center  ">
+                                    <div class="col-6 col-sm-6 col-md-7">
                                             <a href="<?= base_url() . '\agenda\all' ?>"> <button type="button" class="btn " style="color:#F49A41; background:#FFFFFF;border-radius: 45px;">Retour à l'agenda </button></a>
                                     </div>
-                                    <div class="col-12 col-sm-6">
+                                    <div class="col-6 col-sm-6 col-md-5">
                                             <button type="button" class="btn formsave2"  style="color:#F49A41; background:#FFFFFF;border-radius: 45px; border: 1px solid #F49A41;box-sizing: border-box;">Ajouter à l'agenda</button>
                                     </div>
                                 </div>
@@ -101,7 +101,7 @@
                             <p id="thisT" >Merci de remplir toutes les informations obligatoires marquées d’une étoile</p>
                         <div>
                             <!-- INFO SUR L'UTILISATEUR CONNECTÉ-->
-                        <div class="form-group col-md-6">
+                        <div class="form-group ">
                                 <input type="hidden" class="form-controle idUser" value="1" >
                         </div>
 
@@ -153,6 +153,7 @@
                     var path = $("input[name='input1']").val();
                     var filename = path.replace(/^.*\\/, "");
                         console.log(filename);
+                        
 
                 if ($.trim($('.contenuAgenda').val()).length == 0 ) {
                     $('.contenuAgenda').css("background-color", "#FF2D2D");
@@ -295,7 +296,7 @@
     font-family: Sofia Pro;
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 1vw;
     line-height: 16px;
     text-align: center;
     color: #FF2D2D;
@@ -305,9 +306,6 @@
         color:#1F97C7;
         font-family: Sofia Pro;
         font-style: normal;
-        font-weight: 500;
-        font-size: 24px;
-        line-height: 24px;
     }
     .input-container {
 	padding-bottom: 1em;
@@ -342,7 +340,6 @@
     }
     #geo{
         color:aqua;
-        font-size: 30px;
     }
     .jaugeAgenda {
         width: 100%;
@@ -352,7 +349,6 @@
     }
     #peo{
         color:aqua;
-        font-size: 30px;
     }
       .file-upload {
             width: 100%;

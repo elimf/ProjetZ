@@ -1,0 +1,12 @@
+CRITICAL - 2022-02-22 04:42:20 --> require(/Applications/MAMP/htdocs/project/app/Views): Failed to open stream: Undefined error: 0
+#0 /Applications/MAMP/htdocs/project/app/Views/accueil.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require(/Applic...', '/Applications/M...', 18)
+#1 /Applications/MAMP/htdocs/project/app/Views/accueil.php(18): require()
+#2 /Applications/MAMP/htdocs/project/system/View/View.php(210): include('/Applications/M...')
+#3 /Applications/MAMP/htdocs/project/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#4 /Applications/MAMP/htdocs/project/system/Common.php(1089): CodeIgniter\View\View->render('accueil', Array, true)
+#5 /Applications/MAMP/htdocs/project/app/Controllers/Agenda.php(16): view('accueil', Array)
+#6 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(825): App\Controllers\Agenda->index()
+#7 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agenda))
+#8 /Applications/MAMP/htdocs/project/system/CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/project/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}

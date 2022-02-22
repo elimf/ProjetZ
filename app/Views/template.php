@@ -57,7 +57,7 @@
     <img
         src="<?= base_url('images/logocoopere.svg')?>"
         alt=""
-        style="width: 4%"
+        style="width: 3%"
     />
     <button
         class="navbar-toggler"
